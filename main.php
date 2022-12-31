@@ -36,7 +36,9 @@
             } else {
                 $localkoto = "var localkoto = false;";
             }
-			echo '<script type="text/javascript">var live2d_Path = "' . LIVE2D_URL . '/live2d/model/chino/";var message_Path = "' . LIVE2D_URL . '/live2d/";var home_Path = "' . home_url() . '/";'.$nohitokoto.$nospecialtip.$nocatalog.$localkoto.'</script>';
+            $moymodel = json_decode(get_option('live2d_custommoymodel'),true);
+            $moymodel_rand = rand(0,count($moymodel));
+			echo "<script type=\"text/javascript\">var live2d_Path = \"" . LIVE2D_URL . "/live2d/model/" . $moymodel[$moymodel_rand] . "/\";var message_Path = \"" . LIVE2D_URL . "/live2d/\";var home_Path = \"" . home_url() . "/\";".$nohitokoto.$nospecialtip.$nocatalog.$localkoto."</script>";
 
             if (!get_option('live2d_maincolor')) {
                 $maincolor = "206,0,255";

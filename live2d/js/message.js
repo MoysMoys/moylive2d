@@ -174,16 +174,14 @@ function initLive2d (){
 	var moymodeljsoncontent;
 	$.ajax({
 		cache: true,
-		url: `${message_Path}message.json.php`,
+		url: `${message_Path}moymodel.json.php`,
 		dataType: "json",
 		success: function (result) {
 			moymodeljsoncontent = result;
 		}
-	})
+	});
 	var theModel = JSON.parse(moymodeljsoncontent);
-	console.log(moymodeljsoncontent);
-	console.log(theModel);
-	var modelIdx = 0;
+	var modelIdx = Math.floor(Math.random() * theModel.length);
 	$('#landlord').append("<ul class=\"l2d-menu\"><li class=\"l2d-action\" id=\"change-button\">编成</li><li class=\"l2d-action\" id=\"hide-button\">隐藏</li></ul>");
 	if(false == nocatalog) $('.l2d-menu').prepend("<li class=\"l2d-action\" id=\"catalog-button\">目录</li>");
 	$('body').append("<div class=\"show-button\">召唤</div>");
@@ -193,9 +191,9 @@ function initLive2d (){
 			$('.show-button').fadeIn(300);
 		});
 		$('#change-button').on('click', () => {
-			modelIdx = (modelIdx + 1) % theModel.length;
+			modelIdx = Math.floor(Math.random() * theModel.length);
 			loadlive2d('live2d',message_Path+'model/'+theModel[modelIdx]+'/model.json');
-			showMessage("秘书舰已切换成"+theModel[modelIdx],5000);
+			showMessage("板娘已切换成"+theModel[modelIdx],5000);
 		});
 		if(false == nocatalog){
 			$('#catalog-button').on('click', () => {
