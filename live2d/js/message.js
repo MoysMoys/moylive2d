@@ -176,10 +176,10 @@ function initLive2d (){
 		url: `${message_Path}moymodel.json.php`,
 		dataType: "json",
 		success: function (result) {
-			moymodeljsoncontent = result;
+			moymodeljsoncontent = JSON.stringify(result);
 		}
 	});
-	var theModel = $.parseJSON(moymodeljsoncontent);
+	var theModel = JSON.parse(moymodeljsoncontent);
 	var modelIdx = Math.floor(Math.random() * theModel.length);
 	$('#landlord').append("<ul class=\"l2d-menu\"><li class=\"l2d-action\" id=\"change-button\">编成</li><li class=\"l2d-action\" id=\"hide-button\">隐藏</li></ul>");
 	if(false == nocatalog) $('.l2d-menu').prepend("<li class=\"l2d-action\" id=\"catalog-button\">目录</li>");
