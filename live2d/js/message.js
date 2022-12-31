@@ -179,7 +179,12 @@ function initLive2d (){
 			moymodeljsoncontent = JSON.stringify(result);
 		}
 	});
-	var theModel = JSON.parse(moymodeljsoncontent);
+	console.log(moymodeljsoncontent);
+	try {
+		var theModel = JSON.parse(moymodeljsoncontent);
+	}catch (e) {
+		console.log(e);
+	}
 	var modelIdx = Math.floor(Math.random() * theModel.length);
 	$('#landlord').append("<ul class=\"l2d-menu\"><li class=\"l2d-action\" id=\"change-button\">编成</li><li class=\"l2d-action\" id=\"hide-button\">隐藏</li></ul>");
 	if(false == nocatalog) $('.l2d-menu').prepend("<li class=\"l2d-action\" id=\"catalog-button\">目录</li>");
