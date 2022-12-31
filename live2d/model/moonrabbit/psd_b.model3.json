@@ -1,0 +1,101 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "PSD_B.moc3",
+		"Textures": [
+			"PSD_B.4096/texture_00.png"
+		],
+		"Physics": "PSD_B.physics3.json",
+		"DisplayInfo": "PSD_B.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "F_X01",
+				"File": "expressions/F_X01.exp3.json"
+			},
+			{
+				"Name": "F_X02",
+				"File": "expressions/F_X02.exp3.json"
+			},
+			{
+				"Name": "F_Y",
+				"File": "expressions/F_Y.exp3.json"
+			},
+			{
+				"Name": "F_Z",
+				"File": "expressions/F_Z.exp3.json"
+			},
+			{
+				"Name": "M_FA",
+				"File": "expressions/M_FA.exp3.json"
+			},
+			{
+				"Name": "M_KUQI",
+				"File": "expressions/M_KUQI.exp3.json"
+			},
+			{
+				"Name": "M_aixinyan",
+				"File": "expressions/M_aixinyan.exp3.json"
+			},
+			{
+				"Name": "M_lianhei",
+				"File": "expressions/M_lianhei.exp3.json"
+			},
+			{
+				"Name": "M_lianhong",
+				"File": "expressions/M_lianhong.exp3.json"
+			},
+			{
+				"Name": "M_mimiyan",
+				"File": "expressions/M_mimiyan.exp3.json"
+			},
+			{
+				"Name": "M_quanquanyan",
+				"File": "expressions/M_quanquanyan.exp3.json"
+			},
+			{
+				"Name": "M_shengqi",
+				"File": "expressions/M_shengqi.exp3.json"
+			},
+			{
+				"Name": "M_xingxingyan",
+				"File": "expressions/M_xingxingyan.exp3.json"
+			},
+			{
+				"Name": "Q_XIUZI",
+				"File": "expressions/Q_XIUZI.exp3.json"
+			},
+			{
+				"Name": "M_LIUHAN",
+				"File": "expressions/M_LIUHAN.exp3.json"
+			},
+			{
+				"Name": "Q_SICHOU",
+				"File": "expressions/Q_SICHOU.exp3.json"
+			},
+			{
+				"Name": "Q_guanghuan",
+				"File": "expressions/Q_guanghuan.exp3.json"
+			},
+			{
+				"Name": "M_ER",
+				"File": "expressions/M_ER.exp3.json"
+			}
+		]
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}
