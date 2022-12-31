@@ -182,7 +182,7 @@ function initLive2d (){
 	});
 	var theModel = JSON.parse(moymodeljsoncontent);
 	var modelIdx = Math.floor(Math.random() * theModel.length);
-	$('#landlord').append("<ul class=\"l2d-menu\"><li class=\"l2d-action\" id=\"change-button\">编成</li><li class=\"l2d-action\" id=\"hide-button\">隐藏</li></ul>");
+	$('#landlord').append("<ul class=\"l2d-menu\"><li class=\"l2d-action\" id=\"change-button\">更换</li><li class=\"l2d-action\" id=\"hide-button\">隐藏</li></ul>");
 	if(false == nocatalog) $('.l2d-menu').prepend("<li class=\"l2d-action\" id=\"catalog-button\">目录</li>");
 	$('body').append("<div class=\"show-button\">召唤</div>");
     if ($('.l2d-menu').fadeOut(0)){
@@ -193,6 +193,7 @@ function initLive2d (){
 		$('#change-button').on('click', () => {
 			modelIdx = Math.floor(Math.random() * theModel.length);
 			loadlive2d('live2d',message_Path+'model/'+theModel[modelIdx]+'/model.json');
+			setHeight(2.0);
 			showMessage("板娘已切换成"+theModel[modelIdx],5000);
 		});
 		if(false == nocatalog){
