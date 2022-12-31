@@ -49,15 +49,15 @@
             "text": ["你看主人把我扔在这么慢的服务器上，打赏了解一下？"]
         },
         {
-            "selector": ".poiplay.playing",
+            "selector": ".moyplay.playing",
             "text": ["这是播放按钮啦~"]
         },
         {
-            "selector": ".poi-open-list",
+            "selector": ".moy-open-list",
             "text": ["戳一下就可以看到歌词哦！"]
         },
         {
-            "selector": "#open-poi-player",
+            "selector": "#open-moy-player",
             "text": ["听说点这个按钮可以显示/隐藏播放器？"]
         },
         {

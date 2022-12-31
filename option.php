@@ -32,10 +32,11 @@ if ($_POST['update_pluginoptions'] == 'true') {
 	<input type="checkbox" name="localkoto" id="localkoto" <?php echo get_option('live2d_localkoto'); ?> /> 设置本地一言（需开启一言显示）<p>
 	<p>自定义本地一言</p> <textarea name="custom-koto" id="custom-koto"><?php echo get_option('live2d_customkoto'); ?></textarea>
     <p>自定义提示</p> <textarea name="custom-msg" id="custom-msg"><?php echo get_option('live2d_custommsg'); ?></textarea>
+    <p>设置模型</p> <textarea name="custom-moymodel" id="custom-moymodel"><?php echo get_option('live2d_custommoymodel'); ?></textarea>
     <p>请自行校验json有效性，不需要的话请填写{}</p>
     </div>
     <input type="submit" class="button-primary" value="保存设置" style="margin: 20px 0;" /> 
-	<br><br> PoiLive2D改 版本 <?php echo LIVE2D_VERSION; ?>
+	<br><br> moylive2d 版本 <?php echo LIVE2D_VERSION; ?>
 	<br><br>原版插件作者 <a href="https://daidr.me" target="_blank">戴兜</a> &nbsp; <a href="https://daidr.me/archives/code-176.html" target="_blank" >点击获取最新版本 & 说明</a>
 	<br><br><a href="https://omega.im/63/" target="_blank">戳这里</a>围观魔改版插件最新版本 & 说明
 </form>
@@ -74,5 +75,6 @@ function live2d_options_update()
     update_option('live2d_localkoto', $display);
 	update_option('live2d_customkoto', stripslashes($_POST['custom-koto']));
     update_option('live2d_custommsg', stripslashes($_POST['custom-msg']));
+    update_option('live2d_custommoymodel', stripslashes($_POST['custom-moymodel']));
 }
 ?>

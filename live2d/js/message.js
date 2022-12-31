@@ -69,45 +69,30 @@ initTips();
 	$('#landlord').bind("contextmenu", function() {return false;});
 	$('#landlord').bind("selectstart", function() {return false;});
     var text;
-    /*if(document.referrer !== ''){
-        var referrer = document.createElement('a');
-        referrer.href = document.referrer;
-        if(`${home_Path}`.indexOf(referrer.hostname) > 0 ){return;}
-        text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';
-        var domain = referrer.hostname.split('.')[1];
-        if (domain == 'github') {
-            text = '来自GitHub的大佬吗？<br>给大佬递茶。';
-        }else if (domain == 'bing') {
-            text = '用必应找到我的吗？<br>看来你是初次造访的客人呢。';
-        }else if (domain == 'google') {
-            text = '来自谷歌的客人？<br>你一定是一个技术宅吧！</span>';
+	if (window.location.href == `${home_Path}`) { //主页URL判断，需要斜杠结尾
+        var now = (new Date()).getHours();
+        if (now > 23 || now <= 5) {
+            text = '今天也要爆肝吗？早点碎觉有益健康哦。';
+        } else if (now > 5 && now <= 7) {
+            text = '早上……好。真想回去再睡一会儿。';
+        } else if (now > 7 && now <= 11) {
+            text = '喂，上课时间看什么网站，好好听课去。';
+        } else if (now > 11 && now <= 14) {
+            text = '午餐时间！吃点什么好呢？';
+        } else if (now > 14 && now <= 17) {
+            text = '那边的特困生！你这表情就像是睡着了一样~';
+        } else if (now > 17 && now <= 19) {
+            text = '今晚吃什么永远是个难题……你有没有决定好晚上的菜单呢？';
+        } else if (now > 19 && now <= 21) {
+            text = '晚上了，不去玩会儿游戏放松一下吗？';
+        } else if (now > 21 && now <= 23) {
+            text = '已经这么晚了呀，早点休息吧，晚安~~';
+        } else {
+            text = '然而主人并没有好好设计我的对话功能。';
         }
-    }else {*/
-        if (window.location.href == `${home_Path}`) { //主页URL判断，需要斜杠结尾
-            var now = (new Date()).getHours();
-            if (now > 23 || now <= 5) {
-                text = '今天也要爆肝吗？早点碎觉有益健康哦。';
-            } else if (now > 5 && now <= 7) {
-                text = '早上……好。真想回去再睡一会儿。';
-            } else if (now > 7 && now <= 11) {
-                text = '喂，上课时间看什么网站，好好听课去。';
-            } else if (now > 11 && now <= 14) {
-                text = '午餐时间！吃点什么好呢？';
-            } else if (now > 14 && now <= 17) {
-                text = '那边的特困生！你这表情就像是睡着了一样~';
-            } else if (now > 17 && now <= 19) {
-                text = '今晚吃什么永远是个难题……你有没有决定好晚上的菜单呢？';
-            } else if (now > 19 && now <= 21) {
-                text = '晚上了，不去玩会儿游戏放松一下吗？';
-            } else if (now > 21 && now <= 23) {
-                text = '已经这么晚了呀，早点休息吧，晚安~~';
-            } else {
-                text = '然而主人并没有好好设计我的对话功能。';
-            }
-		} else {
-            text = '你正在阅读<br><span style="color:#0099cc;">「 ' + document.title.split(' – ')[0] + ' 」</span>';
-        }
-    //}
+	} else {
+        text = '你正在阅读<br><span style="color:#0099cc;">「 ' + document.title.split(' – ')[0] + ' 」</span>';
+    }
     showMessage(text, 12000);
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
@@ -185,7 +170,19 @@ function positionWrap(){
 }
 
 function initLive2d (){
-	var theModel = new Array("夕立", "时雨");
+	//var theModel = new Array("夕立", "时雨");
+	var moymodeljsoncontent;
+	$.ajax({
+		cache: true,
+		url: `${message_Path}message.json.php`,
+		dataType: "json",
+		success: function (result) {
+			moymodeljsoncontent = result;
+		}
+	})
+	var theModel = JSON.parse(moymodeljsoncontent);
+	console.log(moymodeljsoncontent);
+	console.log(theModel);
 	var modelIdx = 0;
 	$('#landlord').append("<ul class=\"l2d-menu\"><li class=\"l2d-action\" id=\"change-button\">编成</li><li class=\"l2d-action\" id=\"hide-button\">隐藏</li></ul>");
 	if(false == nocatalog) $('.l2d-menu').prepend("<li class=\"l2d-action\" id=\"catalog-button\">目录</li>");
