@@ -175,6 +175,7 @@ function initLive2d (){
 		cache: true,
 		url: `${message_Path}moymodel.json.php`,
 		dataType: "json",
+		async: false,
 		success: function (result) {
 			moymodeljsoncontent = JSON.stringify(result);
 		}
