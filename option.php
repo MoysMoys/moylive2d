@@ -17,7 +17,7 @@ if ($_POST['update_pluginoptions'] == 'true') {
     }
 </style>
 <div class="wrap">
-<h2>PoiLive2D改 插件控制面板</h2>
+<h2>moylive2d 插件控制面板</h2>
 <form method="POST" action="">
 <input type="hidden" name="update_pluginoptions" value="true" />
     <h3>基本设置</h3>
