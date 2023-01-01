@@ -76,7 +76,10 @@ if (!get_option('live2d_localkoto')) {
     update_option('live2d_customkoto', $customkoto);
 }
 if (!get_option('live2d_custommoymodel')) {
-    $custommoymodel = "[\"chino\",\"kanna\",\"kurumi\",\"mikoto\",\"pio\",\"platelet\",\"rem\",\"sagiri\",\"umaru\"]";
+    $custommoymodel = "[\"chino\",\"kanna\",\"kurumi\",\"mikoto\",\"pio\",\"platelet\",\"rem\",\"sagiri\",\"umaru\"]
+    
+    
+    ";
     update_option('live2d_custommoymodel', $custommoymodel);
 }
 
